@@ -36,6 +36,30 @@ namespace FilesOrStringRegExManager
             this.richTextBoxStringOrFilesOrUrl.Text = ofd.FileName; //获得选择的文件路径
             
             this.radioButtonFiles.Checked = true;//本地文件模式已经开启
+            
+            #region//小动作,拿出第一行的内容演示一下
+
+            try
+            {
+                string str = this.richTextBoxStringOrFilesOrUrl.Text;
+                FileInfo files = new FileInfo(str);
+                if (files.Exists == true)
+                {
+                    StreamReader sr = new StreamReader(this.richTextBoxStringOrFilesOrUrl.Text, Encoding.UTF8);
+                    String line;
+                    if ((line = sr.ReadLine()) != null)
+                    {
+                        this.labelSplitReplaceFirstLineContents.Text = line;
+                    }
+
+                    //只是拿出第一行的内容演示一下
+                    sr.Close();
+                }
+
+            }
+            catch { }
+
+            #endregion //小动作
         }
 
 
