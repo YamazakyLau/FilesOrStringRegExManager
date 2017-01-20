@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -89,11 +89,11 @@ namespace FilesOrStringRegExManager
         {
             Regex reg = new Regex(this.textBoxRegexAsFinder.Text);
             string modified = "";
-            Match match = reg.Match(sLine);
+            MatchCollection match = reg.Matches(sLine);
 
             if (this.textBoxRegexAsFinder.Text != "")
             {
-                if (match.Success == true)
+                if (match.Count > 0)
                 {
                     char[] splitChar = this.comboBoxRegexAsReplaceSplit.Text.ToCharArray(0, 1);
                     string[] regs = { "" };
@@ -110,8 +110,15 @@ namespace FilesOrStringRegExManager
                     for (int i = 0; i < regs.Length; i++)
                     {
                         reg = new Regex(regs[i]);
-                        match = reg.Match(sLine);
-                        modified += match.ToString();
+                        match = reg.Matches(sLine);
+
+                        //在输入字符串中找到所有匹配  
+                        for (int j = 0; j < match.Count; j++)
+                        {
+                            //同行中匹配加换行符输出
+                            modified += match[i].Value + "\n";
+                        }   
+
                     }
                 }
             }///!~if(this.textBoxRegexAsFinder.Text != null) end
@@ -132,8 +139,14 @@ namespace FilesOrStringRegExManager
                 for (int i = 0; i < regs.Length; i++)
                 {
                     reg = new Regex(regs[i]);
-                    match = reg.Match(sLine);
-                    modified += match.ToString();
+                    match = reg.Matches(sLine);
+
+                    //在输入字符串中找到所有匹配  
+                    for (int j = 0; j < match.Count; j++)
+                    {
+                        //同行中匹配加换行符输出
+                        modified += match[j].Value + "\n";
+                    } 
                 }
             }///!~else end;
 
@@ -178,7 +191,7 @@ namespace FilesOrStringRegExManager
             }
             catch
             {
-                this.richTextBoxResults.Text = "使用帮助：(本提示只会在操作有误的情形下出现)\n"
+                this.richTextBoxResults.Text = "使用帮助：(本提示只会在操作出错的情形下出现)\n"
                         + "1.在最上方输入框中输入你想处理的行规则；\n"
                         + "2.在下一个方框中输入你想保留内容的规则，多条规则要用特定的分隔符号分开；\n"
                         + "3.分隔符号请在小方框中输入；\n"
