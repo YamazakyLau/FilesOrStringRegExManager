@@ -51,3 +51,6 @@ __支持三种类型：__
 
 ####界面原型预览：
 ![原型界面预览](https://github.com/YamazakyLau/FilesOrStringRegExManager/blob/master/view.png "Optional title")
+
+####原型安装档下载：
+[FilesOrStringRegExManager.zip](https://github.com/YamazakyLau/FilesOrStringRegExManager/blob/master/FilesOrStringRegExManager.zip "下载")
