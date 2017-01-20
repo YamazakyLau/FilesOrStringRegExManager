@@ -48,3 +48,6 @@ __支持三种类型：__
 	- 处理结果为：@1不包含头不包含尾：`http://click.hm.baidu.com/`。@2包含头也包含尾：`<href="http://click.hm.baidu.com/"`。
 * 3.包含头、尾，是指结果内容中包含textBoxContentSubstringHead、textBoxContentSubstringTail中输入的内容本身；
 * 4.值得注意的是，截取过程中，尾的处理逻辑是：<font color=red>在头之后的第一个匹配位置</font>。
+
+####界面原型预览：
+![原型界面预览](https://github.com/YamazakyLau/FilesOrStringRegExManager/blob/master/view.png "Optional title")
