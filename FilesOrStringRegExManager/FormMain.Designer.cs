@@ -1,4 +1,4 @@
-﻿namespace FilesOrStringRegExManager
+namespace FilesOrStringRegExManager
 {
     partial class FormRegEx
     {
@@ -158,9 +158,9 @@
             this.labelSplitReplaceFirstLineContents.ForeColor = System.Drawing.Color.DarkGray;
             this.labelSplitReplaceFirstLineContents.Location = new System.Drawing.Point(116, 22);
             this.labelSplitReplaceFirstLineContents.Name = "labelSplitReplaceFirstLineContents";
-            this.labelSplitReplaceFirstLineContents.Size = new System.Drawing.Size(449, 12);
+            this.labelSplitReplaceFirstLineContents.Size = new System.Drawing.Size(545, 12);
             this.labelSplitReplaceFirstLineContents.TabIndex = 0;
-            this.labelSplitReplaceFirstLineContents.Text = "“这是第一行内容”，在这里我预读取第一行的内容。批量处理建议内容格式齐整！";
+            this.labelSplitReplaceFirstLineContents.Text = "批量处理时确保内容格式齐整、长度间隔一致！“这是第一行内容”，在这里我预读取第一行的内容。";
             // 
             // labelSplitReplaceFirstLine
             // 
@@ -301,7 +301,7 @@
             // 
             // buttonContentSubstringCreate
             // 
-            this.buttonContentSubstringCreate.Location = new System.Drawing.Point(695, 46);
+            this.buttonContentSubstringCreate.Location = new System.Drawing.Point(694, 52);
             this.buttonContentSubstringCreate.Name = "buttonContentSubstringCreate";
             this.buttonContentSubstringCreate.Size = new System.Drawing.Size(79, 23);
             this.buttonContentSubstringCreate.TabIndex = 0;
@@ -321,11 +321,11 @@
             // checkBoxContentSubstringIncludeHead
             // 
             this.checkBoxContentSubstringIncludeHead.AutoSize = true;
-            this.checkBoxContentSubstringIncludeHead.Location = new System.Drawing.Point(202, 49);
+            this.checkBoxContentSubstringIncludeHead.Location = new System.Drawing.Point(187, 49);
             this.checkBoxContentSubstringIncludeHead.Name = "checkBoxContentSubstringIncludeHead";
-            this.checkBoxContentSubstringIncludeHead.Size = new System.Drawing.Size(68, 18);
+            this.checkBoxContentSubstringIncludeHead.Size = new System.Drawing.Size(138, 18);
             this.checkBoxContentSubstringIncludeHead.TabIndex = 0;
-            this.checkBoxContentSubstringIncludeHead.Text = "包含头";
+            this.checkBoxContentSubstringIncludeHead.Text = "包含起始字串本身";
             this.checkBoxContentSubstringIncludeHead.UseVisualStyleBackColor = true;
             this.checkBoxContentSubstringIncludeHead.CheckedChanged += new System.EventHandler(this.checkBoxContentSubstringIncludeHead_CheckedChanged);
             // 
@@ -355,17 +355,17 @@
             // checkBoxContentSubstringIncludeTail
             // 
             this.checkBoxContentSubstringIncludeTail.AutoSize = true;
-            this.checkBoxContentSubstringIncludeTail.Location = new System.Drawing.Point(276, 49);
+            this.checkBoxContentSubstringIncludeTail.Location = new System.Drawing.Point(331, 49);
             this.checkBoxContentSubstringIncludeTail.Name = "checkBoxContentSubstringIncludeTail";
-            this.checkBoxContentSubstringIncludeTail.Size = new System.Drawing.Size(68, 18);
+            this.checkBoxContentSubstringIncludeTail.Size = new System.Drawing.Size(138, 18);
             this.checkBoxContentSubstringIncludeTail.TabIndex = 0;
-            this.checkBoxContentSubstringIncludeTail.Text = "包含尾";
+            this.checkBoxContentSubstringIncludeTail.Text = "包含结束字串本身";
             this.checkBoxContentSubstringIncludeTail.UseVisualStyleBackColor = true;
             this.checkBoxContentSubstringIncludeTail.CheckedChanged += new System.EventHandler(this.checkBoxContentSubstringIncludeTail_CheckedChanged);
             // 
             // richTextBoxResults
             // 
-            this.richTextBoxResults.ForeColor = System.Drawing.Color.Blue;
+            this.richTextBoxResults.ForeColor = System.Drawing.Color.Tomato;
             this.richTextBoxResults.Location = new System.Drawing.Point(17, 97);
             this.richTextBoxResults.Name = "richTextBoxResults";
             this.richTextBoxResults.Size = new System.Drawing.Size(782, 48);
@@ -380,7 +380,7 @@
             this.labelResults.Name = "labelResults";
             this.labelResults.Size = new System.Drawing.Size(133, 14);
             this.labelResults.TabIndex = 0;
-            this.labelResults.Text = "输入文本处理结果：";
+            this.labelResults.Text = "显示文本处理结果：";
             // 
             // FormRegEx
             // 
@@ -402,7 +402,7 @@
             this.MaximumSize = new System.Drawing.Size(827, 516);
             this.MinimumSize = new System.Drawing.Size(827, 516);
             this.Name = "FormRegEx";
-            this.Text = "文本处理大师";
+            this.Text = "文本处理工具";
             this.groupBoxSplitReplace.ResumeLayout(false);
             this.groupBoxSplitReplace.PerformLayout();
             this.groupBoxRegexAs.ResumeLayout(false);
