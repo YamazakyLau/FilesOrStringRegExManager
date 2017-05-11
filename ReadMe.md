@@ -50,7 +50,7 @@ __支持三种类型：__
 * 4.值得注意的是，截取过程中，尾的处理逻辑是：<font color=red>在头之后的第一个匹配位置</font>。
 
 ####界面原型预览：
-![原型界面预览](https://github.com/YamazakyLau/FilesOrStringRegExManager/blob/master/view.png "Optional title")
+![原型界面预览](https://github.com/YamazakyLau/FilesOrStringRegExManager/blob/master/PreView.png "Optional title")
 
 ####原型安装档下载：
-[FilesOrStringRegExManager.zip](https://github.com/YamazakyLau/FilesOrStringRegExManager/blob/master/FilesOrStringRegExManager.zip "下载")
+[FilesOrStringRegExManager.zip](https://github.com/YamazakyLau/FilesOrStringRegExManager/blob/master/ToolsInstall.zip "下载")
