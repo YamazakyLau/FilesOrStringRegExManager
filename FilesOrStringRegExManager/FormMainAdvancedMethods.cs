@@ -7,11 +7,16 @@ using System.Text.RegularExpressions;
 using System.Windows.Forms;
 using System.Net;
 using System.Collections;
+using System.Threading;
 
 namespace FilesOrStringRegExManager
 {
     public partial class FormRegEx
     {
+        public static string MY_DEFINED_MODIFIED_STRING = "";
+        public static string MY_DEFINE_ONE_LINETEXT_STR = "";
+        public static string CONCAT_STRING = "";
+
 
         #region     //正则表达式处理
 
@@ -87,10 +92,34 @@ namespace FilesOrStringRegExManager
 
         private string buttonRegexAsCreateString(string sLine)
         {
-            Regex reg = new Regex(this.textBoxRegexAsFinder.Text);
-            string modified = "";
-            MatchCollection match = reg.Matches(sLine);
+            /*设置多个正则结果之间的连接字符串,默认为"\n"*/
+            if (this.textBoxConcatenation.Text == "")
+            {
+                CONCAT_STRING = "\n";
+            }
+            else
+            {
+                CONCAT_STRING = this.textBoxConcatenation.Text;
+            }
 
+            Thread thread = new Thread(threadToRegexAsCreateString);
+            thread.Priority = ThreadPriority.AboveNormal;
+            thread.IsBackground = true;
+            thread.Start();
+
+            MY_DEFINE_ONE_LINETEXT_STR = sLine;
+
+            return MY_DEFINED_MODIFIED_STRING;
+
+        }
+
+
+        private void threadToRegexAsCreateString()
+        {
+            Regex reg = new Regex(this.textBoxRegexAsFinder.Text);
+            MatchCollection match = reg.Matches(MY_DEFINE_ONE_LINETEXT_STR);
+
+            MY_DEFINED_MODIFIED_STRING = "";
             if (this.textBoxRegexAsFinder.Text != "")
             {
                 if (match.Count > 0)
@@ -110,14 +139,14 @@ namespace FilesOrStringRegExManager
                     for (int i = 0; i < regs.Length; i++)
                     {
                         reg = new Regex(regs[i]);
-                        match = reg.Matches(sLine);
+                        match = reg.Matches(MY_DEFINE_ONE_LINETEXT_STR);
 
                         //在输入字符串中找到所有匹配  
                         for (int j = 0; j < match.Count; j++)
                         {
                             //同行中匹配加换行符输出
-                            modified += match[i].Value + "\n";
-                        }   
+                            MY_DEFINED_MODIFIED_STRING += match[i].Value + CONCAT_STRING;
+                        }
 
                     }
                 }
@@ -139,19 +168,16 @@ namespace FilesOrStringRegExManager
                 for (int i = 0; i < regs.Length; i++)
                 {
                     reg = new Regex(regs[i]);
-                    match = reg.Matches(sLine);
+                    match = reg.Matches(MY_DEFINE_ONE_LINETEXT_STR);
 
                     //在输入字符串中找到所有匹配  
                     for (int j = 0; j < match.Count; j++)
                     {
                         //同行中匹配加换行符输出
-                        modified += match[j].Value + "\n";
-                    } 
+                        MY_DEFINED_MODIFIED_STRING += match[j].Value + CONCAT_STRING;
+                    }
                 }
             }///!~else end;
-
-            return modified;
-
         }
 
 
@@ -199,6 +225,7 @@ namespace FilesOrStringRegExManager
             }
 
         }
+
 
         #endregion      //End 正则表达式处理
 
