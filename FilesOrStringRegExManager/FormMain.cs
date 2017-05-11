@@ -132,7 +132,7 @@ namespace FilesOrStringRegExManager
                     break;
             }
 
-            MessageBox.Show("执行完毕！", "温馨提示",
+            MessageBox.Show("处理程序已经结束，请查看结果！如果内容较大，将转入后台继续运行，请不要重复点击【处理】按钮！", "温馨提示",
                                 MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
