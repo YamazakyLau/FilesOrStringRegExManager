@@ -1,5 +1,5 @@
 <!-- 标题居中，Html语法，创建一条Form -->
-<form style="text-align:center"><h2><font>MyWebToolingCollection工具说明帮助</font></h3></form>
+<form style="text-align:center"><h2><font>FilesOrStringRegExManager工具说明帮助</font></h3></form>
 
 <!-- 目录索引本身的链接等式是#_1 -->
 ####目录索引
