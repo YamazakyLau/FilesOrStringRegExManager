@@ -58,6 +58,8 @@ namespace FilesOrStringRegExManager
             this.checkBoxContentSubstringIncludeTail = new System.Windows.Forms.CheckBox();
             this.richTextBoxResults = new System.Windows.Forms.RichTextBox();
             this.labelResults = new System.Windows.Forms.Label();
+            this.labelConcatenation = new System.Windows.Forms.Label();
+            this.textBoxConcatenation = new System.Windows.Forms.TextBox();
             this.groupBoxSplitReplace.SuspendLayout();
             this.groupBoxRegexAs.SuspendLayout();
             this.groupBoxContentSubstring.SuspendLayout();
@@ -66,7 +68,7 @@ namespace FilesOrStringRegExManager
             // labelRegexAsReplaceSplit
             // 
             this.labelRegexAsReplaceSplit.AutoSize = true;
-            this.labelRegexAsReplaceSplit.Location = new System.Drawing.Point(568, 19);
+            this.labelRegexAsReplaceSplit.Location = new System.Drawing.Point(486, 19);
             this.labelRegexAsReplaceSplit.Name = "labelRegexAsReplaceSplit";
             this.labelRegexAsReplaceSplit.Size = new System.Drawing.Size(77, 14);
             this.labelRegexAsReplaceSplit.TabIndex = 0;
@@ -85,7 +87,7 @@ namespace FilesOrStringRegExManager
             // 
             // textBoxRegexAsReplace
             // 
-            this.textBoxRegexAsReplace.Location = new System.Drawing.Point(316, 36);
+            this.textBoxRegexAsReplace.Location = new System.Drawing.Point(228, 36);
             this.textBoxRegexAsReplace.MaxLength = 2000;
             this.textBoxRegexAsReplace.Name = "textBoxRegexAsReplace";
             this.textBoxRegexAsReplace.Size = new System.Drawing.Size(249, 23);
@@ -105,13 +107,13 @@ namespace FilesOrStringRegExManager
             this.textBoxRegexAsFinder.Location = new System.Drawing.Point(8, 36);
             this.textBoxRegexAsFinder.MaxLength = 3000;
             this.textBoxRegexAsFinder.Name = "textBoxRegexAsFinder";
-            this.textBoxRegexAsFinder.Size = new System.Drawing.Size(249, 23);
+            this.textBoxRegexAsFinder.Size = new System.Drawing.Size(208, 23);
             this.textBoxRegexAsFinder.TabIndex = 1;
             // 
             // labelRegexAsReplace
             // 
             this.labelRegexAsReplace.AutoSize = true;
-            this.labelRegexAsReplace.Location = new System.Drawing.Point(313, 19);
+            this.labelRegexAsReplace.Location = new System.Drawing.Point(225, 19);
             this.labelRegexAsReplace.Name = "labelRegexAsReplace";
             this.labelRegexAsReplace.Size = new System.Drawing.Size(245, 14);
             this.labelRegexAsReplace.TabIndex = 0;
@@ -247,7 +249,7 @@ namespace FilesOrStringRegExManager
             "#",
             "犭",
             "$"});
-            this.comboBoxRegexAsReplaceSplit.Location = new System.Drawing.Point(571, 36);
+            this.comboBoxRegexAsReplaceSplit.Location = new System.Drawing.Point(489, 36);
             this.comboBoxRegexAsReplaceSplit.MaxLength = 1;
             this.comboBoxRegexAsReplaceSplit.Name = "comboBoxRegexAsReplaceSplit";
             this.comboBoxRegexAsReplaceSplit.Size = new System.Drawing.Size(79, 22);
@@ -257,6 +259,8 @@ namespace FilesOrStringRegExManager
             // groupBoxRegexAs
             // 
             this.groupBoxRegexAs.BackColor = System.Drawing.SystemColors.Control;
+            this.groupBoxRegexAs.Controls.Add(this.textBoxConcatenation);
+            this.groupBoxRegexAs.Controls.Add(this.labelConcatenation);
             this.groupBoxRegexAs.Controls.Add(this.buttonRegexAsCreate);
             this.groupBoxRegexAs.Controls.Add(this.comboBoxRegexAsReplaceSplit);
             this.groupBoxRegexAs.Controls.Add(this.labelRegexAsFinder);
@@ -382,12 +386,29 @@ namespace FilesOrStringRegExManager
             this.labelResults.TabIndex = 0;
             this.labelResults.Text = "显示文本处理结果：";
             // 
+            // labelConcatenation
+            // 
+            this.labelConcatenation.AutoSize = true;
+            this.labelConcatenation.Location = new System.Drawing.Point(585, 19);
+            this.labelConcatenation.Name = "labelConcatenation";
+            this.labelConcatenation.Size = new System.Drawing.Size(105, 14);
+            this.labelConcatenation.TabIndex = 4;
+            this.labelConcatenation.Text = "结果间连接字符";
+            // 
+            // textBoxConcatenation
+            // 
+            this.textBoxConcatenation.Location = new System.Drawing.Point(588, 35);
+            this.textBoxConcatenation.Name = "textBoxConcatenation";
+            this.textBoxConcatenation.Size = new System.Drawing.Size(72, 23);
+            this.textBoxConcatenation.TabIndex = 5;
+            this.textBoxConcatenation.Text = "#-#-#";
+            // 
             // FormRegEx
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 14F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(811, 478);
+            this.ClientSize = new System.Drawing.Size(815, 483);
             this.Controls.Add(this.labelResults);
             this.Controls.Add(this.richTextBoxResults);
             this.Controls.Add(this.groupBoxContentSubstring);
@@ -446,6 +467,7 @@ namespace FilesOrStringRegExManager
         private System.Windows.Forms.RichTextBox richTextBoxResults;
         private System.Windows.Forms.Label labelResults;
         private System.Windows.Forms.Label labelContentSubstringHead;
+        private System.Windows.Forms.Label labelConcatenation;
+        private System.Windows.Forms.TextBox textBoxConcatenation;
     }
 }
-
